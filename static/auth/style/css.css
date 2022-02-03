@@ -1,18 +1,20 @@
 body{
     text-align: center;
 }
+#accessbar{
+    width: 250px;
+    height: 100px;
+}
+
+#childbar{
+    /* padding-top: 1000px; */
+    border: aqua;
+}
+
 h1{
     color: lightsalmon;
     text-align: center;
-    background-color: aqua;
-}
-
-#id_username{
-    text-align: center;
-}
-
-#id_password{
-    text-align: center;
+    background: rgba(43, 166, 203, 0.5);
 }
 
 a{

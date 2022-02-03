@@ -1,22 +1,23 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 {% load static %}
 
 {% block front %}
-    <link rel="stylesheet" href="{% static 'auth/authStyle.css' %}">
-    <!-- <script src="{% static 'auth/authjs.js' %}"></script> -->
+    <link rel="stylesheet" href="{% static 'auth/style/css.css' %}">
+    <script src="{% static 'auth/js/authjs.js' %}"></script>
 {% endblock %}
 
 {% block title %}Index Page{% endblock %}
 
 {% block content %}
 
-    <h1>Sign Up Page</h1> 
-    <form action="" method="post">
-        {% csrf_token %}
-        {{signUpForm.username.label_tag}} {{signUpForm.username}} <br> <br>
-        {{signUpForm.password1.label_tag}} {{signUpForm.password1}} <br> <br>
-        Confirmation: {{signUpForm.password2}} <br> <br>
-        <input type="submit" name="signupform" id="id_signupform">
-    </form>
+<h1>Sign Up Page</h1> 
+<form action="" method="post">
+    {% csrf_token %}
+    {{signUpForm.username.label_tag}} {{signUpForm.username}} <br> <br>
+    {{signUpForm.password1.label_tag}} {{signUpForm.password1}} <br> <br>
+    Confirmation: {{signUpForm.password2}} <br> <br>
+    <input type="submit" name="signupform" id="id_signupform">
+</form>
 
 {% endblock %}
+
