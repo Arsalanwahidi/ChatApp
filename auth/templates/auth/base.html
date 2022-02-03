@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block front %}
+    <link rel="stylesheet" href="{% static 'auth/style/css.css' %}">
+    <script src="{% static 'auth/js/authjs.js' %}"></script>
+{% endblock %}
+
+{% block title %}Index Page{% endblock %}
+
+
+{% block content %}
+
+    <h1>Main Page</h1>
+    <h2>Username: {{user|capfirst}}</h2>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}
+
+

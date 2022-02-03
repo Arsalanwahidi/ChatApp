@@ -1,9 +1,10 @@
 body{
     text-align: center;
 }
-
 h1{
     color: lightsalmon;
+    text-align: center;
+    background-color: aqua;
 }
 
 #id_username{
@@ -17,9 +18,11 @@ h1{
 a{
     color: red;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 15px;
+    text-align: center;
 }
 
 ul{
     list-style-type: None;
+    text-align: center;
 }

@@ -8,8 +8,12 @@
     <title>{% block title %}Base Page{% endblock %}</title>
 </head>
 <body>
+    <div id='accessbar'>
+        <a href="{% url 'signup' %}">Sign Up</a>||
+    </div>
     {% block content %}
 
     {% endblock %}
+
 </body>
 </html>
