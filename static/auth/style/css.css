@@ -3,12 +3,13 @@ body{
 }
 #accessbar{
     width: 250px;
-    height: 100px;
+    padding-top: 80px;
 }
 
 #childbar{
-    /* padding-top: 1000px; */
-    border: aqua;
+    height: 80px;
+    float: left;
+    margin-left: 0px;
 }
 
 h1{

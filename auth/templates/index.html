@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=100px, initial-scale=1.0">
+    <meta name="viewport" content="width=1281px, initial-scale=1.0">
     {% block front %}{% endblock %}
     <title>{% block title %}Base Page{% endblock %}</title>
 </head>
 <body>
     <div id='accessbar'>
         <div id="childlist">
-            <a href="{% url 'signup' %}" id="id_signup">Sign Up</a>||
-            {% if request.user.is_authenticated %}
-                <a href="{% url 'login' %}" id="id_login">Login</a>||
+            <a href="{% url 'index' %}" id="id_signup">Main Page</a>||
+            <a href="{% url 'signup' %}" id="id_signup">Signup Page</a>||
+            {% if not request.user.is_authenticated %}
+                <a href="{% url 'login' %}" id="id_login">Login Page</a>||
             {% endif %}
         </div>
     </div>
