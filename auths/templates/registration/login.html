@@ -6,6 +6,8 @@
     <script src="{% static 'auth/js/authjs.js' %}"></script>
 {% endblock %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}Login Page{% endblock %}
 {% load crispy_forms_tags %}
 
@@ -20,6 +22,7 @@
         {{ form.password.label_tag }} 
         {{ form.password }} <br> <br>
     <input type="submit" value="login">
+
 </form>
     
     {# Assumes you set up the password_reset view in your URLconf #}

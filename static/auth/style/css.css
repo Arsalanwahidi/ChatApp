@@ -4,11 +4,11 @@ body{
 #accessbar{
     width: 250px;
     padding-top: 80px;
+    margin-left: 0px;
 }
 
 #childbar{
     height: 80px;
-    float: left;
     margin-left: 0px;
 }
 

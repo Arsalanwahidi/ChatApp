@@ -9,7 +9,7 @@ from django.contrib.auth.backends import ModelBackend, BaseBackend, RemoteUserBa
 
 # Create your views here.
 
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='accounts/login/')
 def index(request):
     
     user = User()

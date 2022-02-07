@@ -14,7 +14,10 @@
             <a href="{% url 'signup' %}" id="id_signup">Signup Page</a>||
             {% if not request.user.is_authenticated %}
                 <a href="{% url 'login' %}" id="id_login">Login Page</a>||
+            {% else %}
+                <a href="{% url 'chat:home' %}" id="id_signup">Start Chat</a>||
             {% endif %}
+
         </div>
     </div>
     {% block content %}
