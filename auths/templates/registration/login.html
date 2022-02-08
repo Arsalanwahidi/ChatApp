@@ -11,20 +11,30 @@
 {% block title %}Login Page{% endblock %}
 {% load crispy_forms_tags %}
 
-{% block content %}
-<h1>Login page</h1>  
+{% block content %}  
 
 
-<form action="" method="post" novalidate>
-    {% csrf_token %}
-        {{ form.username.label_tag }} 
-        {{ form.username }} <br> <br>
-        {{ form.password.label_tag }} 
-        {{ form.password }} <br> <br>
-    <input type="submit" value="login">
-
-</form>
-    
+<div class="bg-dark d-inline-block p-3 text-white rounded-lg">
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <ul>
+            <li>
+                <h1 class="p-2">Login In</h1>
+            </li>
+            <li class="font-italic">
+                {{ form.username.label_tag }} 
+                {{ form.username }} 
+            </li>
+            <li class="font-italic">
+                {{ form.password.label_tag }} 
+                {{ form.password }}
+            </li>
+            <li>
+                <input class="m-t-3 p-1 text-white  rounded-lg bg-dark" type="submit" value="Login">
+            </li>
+        </ul>
+    </form>
+</div>
     {# Assumes you set up the password_reset view in your URLconf #}
     <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
 {% endblock %}

@@ -13,9 +13,13 @@
 
 {% block content %}
 
-    <h1>Main Page</h1>
-    <h2>Username: {{user|capfirst}}</h2>
-    <a href="{% url 'logout' %}">Logout</a>
+    <div class="container-md">
+        <h1 class="p-3 round bg-info col-xl-9 text-primary">Home Page</h1>
+    </div>
+    <div class="container-sm col-sm-9 text-info">
+        <h2>Username: {{user|capfirst}}</h2>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
 {% endblock %}
 
 
