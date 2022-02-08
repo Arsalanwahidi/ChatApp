@@ -10,14 +10,28 @@
 
 {% block content %}
 
-<h1>Sign Up Page</h1> 
-<form action="" method="post">
-    {% csrf_token %}
-    {{signUpForm.username.label_tag}} {{signUpForm.username}} <br> <br>
-    {{signUpForm.password1.label_tag}} {{signUpForm.password1}} <br> <br>
-    Confirmation: {{signUpForm.password2}} <br> <br>
-    <input type="submit" name="signupform" id="id_signupform">
-</form>
 
+<div class="p-2 rounded-lg bg-dark text-white d-inline-block">
+    <form action="" method="post">
+        {% csrf_token %}
+        <ul>
+            <li>
+                <h1>Sign Up</h1> 
+            </li>
+            <li>
+                {{signUpForm.username.label_tag}} {{signUpForm.username}}
+            </li>
+            <li>
+                {{signUpForm.password1.label_tag}} {{signUpForm.password1}}
+            </li>
+            <li>
+                Confirm: {{signUpForm.password2}}
+            </li>
+            <li>
+                <input class="m-t-5 lead" type="submit" name="signupform" id="id_signupform">
+            </li>
+        </ul>
+    </form>
+</div>
 {% endblock %}
 
