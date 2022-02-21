@@ -14,7 +14,7 @@
 {% block content %}  
 
 
-<div class="bg-dark d-inline-block p-3 text-white rounded-lg">
+<div class="bg-info d-inline-block p-3 text-white rounded-lg d-flex align-items-center justify-content-center ">
     <form method="post" novalidate>
         {% csrf_token %}
         <ul>
@@ -30,13 +30,14 @@
                 {{ form.password }}
             </li>
             <li>
-                <input class="m-t-3 p-1 text-white  rounded-lg bg-dark" type="submit" value="Login">
+                <input class="m-t-3 p-1 text-black lead border-0 rounded-lg bg-light" type="submit" value="Login">
             </li>
         </ul>
     </form>
 </div>
     {# Assumes you set up the password_reset view in your URLconf #}
-    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    <br>
+    <p><a class="p-3 mt-4 rounded bg-primary text-light" href="{% url 'password_reset' %}">Lost password?</a></p>
 {% endblock %}
 
 

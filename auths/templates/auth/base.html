@@ -13,12 +13,10 @@
 
 {% block content %}
 
-    <div class="container-md">
-        <h1 class="p-3 round bg-info col-xl-9 text-primary">Home Page</h1>
-    </div>
-    <div class="container-sm col-sm-9 text-info">
-        <h2>Username: {{user|capfirst}}</h2>
-        <a href="{% url 'logout' %}">Logout</a>
+    <div class="container center">
+        <h1 class="p-3 rounded bg-info col-12 text-primary center">Home Page</h1>
+        <h2 class="text-primary bg-light p-3 rounded center" style="width: 300px;">Username: {{user|capfirst}}</h2><br>
+        <a class="p-3 rounded bg-primary text-light center" href="{% url 'logout' %}">Logout</a>
     </div>
 {% endblock %}
 

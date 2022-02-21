@@ -1,26 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-{% block front %}
-    <link rel="stylesheet" href="{% static 'chat/style/chatStyle.css' %}">
-    <script src="{% static 'chat/js/jquery-3.6.0.js' %}"></script>
-    <script src="{% static 'chat/js/chatjs.js' %}"></script>
-{% endblock %}
-
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
+    
     <h1>Start Your Chat Here</h1>
     {{request.user|capfirst}}
-    <form action="" method="post" id="form_data">
+    <form action="check_group" method="post">
         {% csrf_token %}
         {{group.group.label_tag}}
         {{group.group}}
         <input type="submit" name="submit" id="id_submit">
     </form>
 
-    <button id="btnGet">GET</button>
-    <div id="getData"></div>
+    <div id="demo"></div>
     
 {% endblock %}

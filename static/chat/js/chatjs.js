@@ -1,43 +1,37 @@
 
 //Ajax implamention post and get request
-$(document).ready(function () {
 
-    groupData = $('id_group').val();
+$(document).ready(function () {
+    var counter = 0;
+    var idGroup = $('#groupName').text();
     $(document).on('submit', '#form_data', function (e) {
         e.preventDefault();
-
+        
         $.ajax({
             type: 'POST',
-            url: '/postdata',
+            url: `/postdata/${idGroup}`,
             data: {
-                group: $('#id_group').val(),
+                messages: $('#id_messages').val(),
                 csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
             },
             success: function (response) {
-                alert(`${groupData} group is created`);
                 $('#id_group').val('');
             },
             error: function (err) {
                 console.log(err)
             },
         });
-    });
-
-    $('#btnGet').click(function () {
+      
         $.ajax({
             type: 'GET',
-            url: '/getdata',
+            url: `/getdata/${counter}`,
             success: function (response) {
-                document.getElementById('getData').innerHTML = `We get the data: \'${response.data}\'`;
+                counter++;
+                $('#getData').append("" + response.messages + '<br>');
             },
             error: function (err) {
-                console.log(err)
+                console.log(err);
             },
         });
     });
-
-    // setInterval(() => {
-
-    // }, 2000);
-
 })

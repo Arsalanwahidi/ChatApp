@@ -5,6 +5,7 @@ app_name = 'chat'
 
 urlpatterns = [
     path('chat', views.home, name='home'),
-    path('postdata', views.post_data, name='post'),    
-    path('getdata', views.get_data, name='get'),
+    path('postdata/<str:group>', views.post_data, name='post'),
+    path('getdata/<int:num>', views.get_data, name='get'),
+    path('check_group', views.check_group, name='checkGroup'),
 ]

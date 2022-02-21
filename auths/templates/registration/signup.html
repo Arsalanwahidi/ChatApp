@@ -11,24 +11,24 @@
 {% block content %}
 
 
-<div class="p-2 rounded-lg bg-dark text-white d-inline-block">
+<div class="p-3 rounded-lg bg-info text-white d-inline-block d-flex align-items-center justify-content-center">
     <form action="" method="post">
         {% csrf_token %}
         <ul>
-            <li>
+            <li class="m-3">
                 <h1>Sign Up</h1> 
             </li>
-            <li>
+            <li class="border-0">
                 {{signUpForm.username.label_tag}} {{signUpForm.username}}
             </li>
-            <li>
+            <li class="border-0">
                 {{signUpForm.password1.label_tag}} {{signUpForm.password1}}
             </li>
-            <li>
+            <li class="border-0">
                 Confirm: {{signUpForm.password2}}
             </li>
-            <li>
-                <input class="m-t-5 lead" type="submit" name="signupform" id="id_signupform">
+            <li><br>
+                <input class="m-t-5 lead bg-light rounded border-0" type="submit" name="signupform" id="id_signupform">
             </li>
         </ul>
     </form>
