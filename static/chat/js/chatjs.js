@@ -24,33 +24,37 @@ $(document).ready(function () {
             });
         }
       
-        setTimeout(() => {
-            $.ajax({
-                type: 'GET',
-                url: `/getdata/${counter}`,
-                success: function (response) {
-                    counter++;
-                    $('#getData').append("" + response.messages + '<br>');
-                },
-                error: function (err) {
-                    console.log(err);
-                },
-            });
-        }, 1400);
+        // setTimeout(() => {
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: `/getdata/${counter}`,
+        //         success: function (response) {
+        //             for(let key in response.messages){
+        //                 counter++;
+        //                 $('#getData').append("" + response.messages[key].messages + '<br>');
+        //             }
+        //         },
+        //         error: function (err) {
+        //             console.log(err);
+        //         },
+        //     });
+        // }, 1400);
     });
 
-    // setInterval(() => {
-    //     $.ajax({
-    //         type: 'GET',
-    //         url: `/getdata/${counter}`,
-    //         success: function (response) {
-    //             counter++;
-    //             $('#getData').append("" + response.messages + '<br>');
-    //         },
-    //         error: function (err) {
-    //             console.log(err);
-    //         },
-    //     });
-    // }, 4500);
+    setInterval(() => {
+        $.ajax({
+            type: 'GET',
+            url: `/getdata/${counter}`,
+            success: function (response) {
+                for(let key in response.messages){
+                     counter++;
+                     $('#getData').append("" + response.messages[key].messages + '<br>');
+                 }
+            },
+            error: function (err) {
+                console.log(err);
+            },
+        });
+    }, 1200);
 
 });

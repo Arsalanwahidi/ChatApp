@@ -43,6 +43,6 @@ def post_data(request, group):
     return render(request, 'chat/chatroom.html', {'group': group_chat, 'user': request.user,'msg_group': msg_group})
 
 def get_data(request, num):
-    # data = request.POST.get('messages')
-    data = GroupMessages.objects.get(id=num)
-    return JsonResponse({'messages': data.messages}, status=200)
+    
+    data = GroupMessages.objects.filter(id=num)
+    return JsonResponse({'messages': list(data.values())}, status=200)
