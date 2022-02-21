@@ -18,7 +18,7 @@ def Sign_up(request):
 
     signUpForm = UserCreationForm(request.POST)
     if request.POST:
-        if signUpForm.is_valid:
+        if signUpForm.is_valid():
             signUpForm.save()
             return redirect('index')
     else:

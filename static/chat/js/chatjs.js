@@ -16,14 +16,14 @@ $(document).ready(function () {
                     csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
                 },
                 success: function (response) {
-                    $('#id_group').val('');
+                    $('#id_messages').val('');
                 },
                 error: function (err) {
                     console.log(err)
                 },
             });
-        }
-      
+        };
+
         // setTimeout(() => {
         //     $.ajax({
         //         type: 'GET',
@@ -48,13 +48,14 @@ $(document).ready(function () {
             success: function (response) {
                 for(let key in response.messages){
                      counter++;
-                     $('#getData').append("" + response.messages[key].messages + '<br>');
+                     $('#getData').append("" + response.messages[key].messages + 
+                     ` <span style="background-color: aqua;font-size: 9px;">${$('#userName').text()}</span>` + '<br>');
                  }
             },
             error: function (err) {
                 console.log(err);
             },
         });
-    }, 1200);
+    }, 5200);
 
 });

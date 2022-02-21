@@ -5,9 +5,10 @@
 {% block content %}
 
     <h1 class="text-primary bg-dark">Chat Room</h1>
-    <h4>Group of: 
-        <span id="groupName">{{group}}</span></h4>
-    {{user|capfirst}}
+
+    <h4>Group of: <span id="groupName">{{group}}</span></h4>
+
+    <h4 id="userName">{{user|capfirst}}</h4>
 
     <form action="" id="form_data" method="post">
         {% csrf_token %}
