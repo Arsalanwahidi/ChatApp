@@ -7,6 +7,8 @@
     
     <h1>Start Your Chat Here</h1>
     {{request.user|capfirst}}
+
+    <div id="demo"></div>
     <form action="check_group" method="post">
         {% csrf_token %}
         {{group.group.label_tag}}
@@ -14,6 +16,6 @@
         <input type="submit" name="submit" id="id_submit">
     </form>
 
-    <div id="demo"></div>
+    
     
 {% endblock %}

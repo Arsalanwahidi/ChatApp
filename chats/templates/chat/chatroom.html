@@ -7,7 +7,6 @@
     <h1 class="text-primary bg-dark">Chat Room</h1>
 
     <h4>Group of: <span id="groupName">{{group}}</span></h4>
-
     <h4 id="userName">{{user|capfirst}}</h4>
 
     <form action="" id="form_data" method="post">
@@ -15,7 +14,7 @@
         {{msg_group.messages}}
         <input type="submit" name="sub_msg" id="id_msg">
     </form>
-
     <div id="getData"></div>
+    {{d}}
 
 {% endblock %}
